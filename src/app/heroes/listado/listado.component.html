@@ -1,0 +1,31 @@
+<p>listado works!</p>
+
+<div *ngIf="heroeborrado !==''; else noborrado">
+    <!-- este bloque va a aparecer si ngif es igual a true  -->
+    <h3>Heroe borrado:  <small>{{heroeborrado}}</small></h3>
+</div>
+
+<ng-template #noborrado>
+    <!-- con el # significa referencia local -->
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+<button (click)="borrarHeroe()">borrar</button>
+<ul>
+    <li *ngFor="let heroe of heroes; let i=index;">
+        <!-- este es un for pero para el dom -->
+        {{heroe}}
+        {{i}}
+    </li>
+    <!-- <li>
+        {{heroes[1]}}
+    </li>
+    <li>
+        {{heroes[2]}}
+    </li>
+    <li>
+        {{heroes[3]}}
+    </li> -->
+    
+</ul>
+
