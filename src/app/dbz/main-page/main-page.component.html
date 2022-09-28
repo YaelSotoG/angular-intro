@@ -1,0 +1,36 @@
+<h1>DBZ</h1>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-personajes [personajes]="personajes">
+            <!-- el [personajes]es de personajes.component y el "personajes" es de main-page -->
+            <!-- en el input para no confundirnos podemos hacer que se llame data  -->
+        </app-personajes>
+     
+    </div>
+    <div class="col">
+        <h3>agregar</h3>
+        <hr>
+
+        <!-- <form (submit)="agregar( $event )"> -->
+            <!-- el $event manda el evento que dispara el submit  -->
+            <form (ngSubmit)="agregar()">
+      
+            <input 
+                type="text" 
+                placeholder="Nombre " 
+                name="nombre"
+                [(ngModel)]="nuevo.nombre"
+            />
+            <!-- [value]="nuevo.nombre" -->
+            <!-- (input)="cambiarNombre($event)" -->
+            <!-- esto existe como una forma de checar los cambios en el form pero mejor se usa ngmodel -->
+            <!-- () es para un evento -->
+            <!-- [] son para declarar variables  -->
+            <!-- [()] esto significa que quiero tanto declarar la variable como el evento -->
+            <input type="number" placeholder="Poder " [value]="nuevo.poder" name="poder" [(ngModel)]="nuevo.poder"/>
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+</div>
+
