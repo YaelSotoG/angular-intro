@@ -23,9 +23,6 @@ export class MainPageComponent  {
     poder:1200
   }
   
-  
-  
-
   // get personajes():Personaje[]{
   //   return this.dbzService.personajes
   // }
