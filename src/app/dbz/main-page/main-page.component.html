@@ -2,7 +2,8 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-personajes [personajes]="personajes">
+        <!-- <app-personajes [personajes]="personajes"> -->
+        <app-personajes>
             <!-- el [personajes]es de personajes.component y el "personajes" es de main-page -->
             <!-- en el input para no confundirnos podemos hacer que se llame data  -->
         </app-personajes>
@@ -12,8 +13,7 @@
         <!-- <app-agregar [personajes]="personajes"></app-agregar> -->
         <!-- no se por que funciona bien el de arriba jajaja pero el verdadero es el no comentado -->
         <app-agregar 
-            (onNuevoPersonaje)="agregarNuevoPersonaje($event)"           
-            [nuevo]="nuevo">
+>
         </app-agregar>
         <!-- el onNuevoPersonaje se crea en el ts y es para generar eventos -->
     </div>

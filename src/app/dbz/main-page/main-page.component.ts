@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { dbzService } from '../services/dbz.service';
 
 
 
@@ -9,24 +10,13 @@ import { Personaje } from '../interfaces/dbz.interface';
  
 })
 export class MainPageComponent  {
-  
-  personajes:Personaje[]=[
-    {
-      nombre:"goku",
-      poder:15000
-    },
-    {
-      nombre:'vegeta',
-      poder:14500
-    }
-  ];
 
-
+  // personajes:Personaje[]=[];
  
-  cambiarNombre(event:any){//el event necesita un tipo obligatorio
-    console.log(event.target.value);
+  // cambiarNombre(event:any){//el event necesita un tipo obligatorio
+  //   console.log(event.target.value);
 
-  }
+  // }
 
   nuevo:Personaje={
     nombre:'Trunks',
@@ -34,13 +24,17 @@ export class MainPageComponent  {
   }
   
   
-  agregarNuevoPersonaje(argumento:Personaje){
-    // console.log('call main page')  
-    debugger;
-    //esta funcion hace que se pause el navegador al llegar a esta linea de codigo    
-    this.personajes.push(argumento)
-  }
+  
 
+  // get personajes():Personaje[]{
+  //   return this.dbzService.personajes
+  // }
+  
+  constructor(){
+    // this.personajes=this.dbzService.personajes;
+    // console.log('inicializado')
+  }//esto se le conoce como inyector de dependencias 
+  
 
   // // agregar(event:any){
   // //   // event.preventDefault();//esto evita que la pagina se recargue
